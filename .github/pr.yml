@@ -43,3 +43,4 @@ jobs:
           FORCE_COLOR: 1
         run: |
           earthly --no-cache +all
+          
