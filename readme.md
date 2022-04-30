@@ -1,5 +1,7 @@
 # docker-go
 
+[![main](https://github.com/Tochemey/docker-go/actions/workflows/main.yml/badge.svg)](https://github.com/Tochemey/docker-go/actions/workflows/main.yml)
+
 Docker Image for Golang Tools. The project adheres
 to [Semantic Versioning](https://semver.org) and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
@@ -13,3 +15,5 @@ to [Semantic Versioning](https://semver.org) and [Conventional Commits](https://
 
 - Linux AMD
 - Linux ARM
+- Linux on Power (ppc64le) POWER8 or later
+- LinuxONE (s390x)

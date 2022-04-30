@@ -3,7 +3,13 @@ VERSION 0.6
 all:
     BUILD \
         --platform=linux/amd64 \
+        --platform=linux/amd64/v8 \
         --platform=linux/arm64 \
+        --platform=linux/arm/v7 \
+        --platform=linux/arm/v6 \
+        --platform=linux/386 \
+        --platform=linux/ppc64le \
+        --platform=linux/s390x
         +golang-base
 
 golang-base:
