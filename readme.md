@@ -15,5 +15,3 @@ Linux Docker Image for Golang and Golang development Tools. The project adheres 
 
 - Linux AMD
 - Linux ARM
-- Linux on Power (ppc64le) POWER8 or later
-- LinuxONE (s390x)
