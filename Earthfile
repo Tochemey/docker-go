@@ -9,7 +9,7 @@ all:
         --platform=linux/arm/v6 \
         --platform=linux/386 \
         --platform=linux/ppc64le \
-        --platform=linux/s390x
+        --platform=linux/s390x \
         +golang-base
 
 golang-base:
