@@ -50,4 +50,3 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           earthly --push --no-cache +all
-          
