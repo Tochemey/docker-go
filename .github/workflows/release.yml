@@ -1,8 +1,9 @@
-name: main
+name: release
 
 on:
   push:
-    branches: [ main ]
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
@@ -35,17 +36,21 @@ jobs:
         run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.14/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
       - name: Earthly version
         run: earthly --version
-      - uses: go-semantic-release/action@v1
-        id: semver
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-initial-development-versions: true
-          force-bump-patch-version: true
-      - name: Build Docker Images
+      - name: Create Version
+        id: version
+        run: |
+          # TODO: find a better way to version from tags
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # set to output var
+          echo ::set-output name=VERSION::${VERSION}
+      - name: Run Build and Push Docker Images
         env:
           EARTHLY_BUILD_ARGS: "COMMIT_HASH,VERSION"
           COMMIT_HASH: ${{ github.sha }}
-          VERSION: ${{ steps.semver.outputs.version }}
+          VERSION: ${{ steps.version.outputs.VERSION }}
           GH_USER: ${{ github.actor }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
