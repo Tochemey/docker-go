@@ -55,4 +55,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EARTHLY_SECRETS: "GH_USER,GH_TOKEN"
         run: |
-          earthly --push --no-cache +all
+          earthly --no-cache --push +all

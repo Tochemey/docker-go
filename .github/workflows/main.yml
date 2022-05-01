@@ -40,7 +40,6 @@ jobs:
           EARTHLY_BUILD_ARGS: "COMMIT_HASH,VERSION"
           COMMIT_HASH: ${{ github.sha }}
           VERSION:  ${{ github.sha }}
-          GH_USER: ${{ github.actor }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE_COLOR: 1
         run: |
           earthly --no-cache +all
