@@ -1,6 +1,6 @@
 # docker-go
 
-[![main](https://github.com/Tochemey/docker-go/actions/workflows/main.yml/badge.svg)](https://github.com/Tochemey/docker-go/actions/workflows/main.yml)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/tochemey/docker-go/main)
 
 Linux Docker Image for Golang and Golang development Tools. The project adheres to [Semantic Versioning](https://semver.org) and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
