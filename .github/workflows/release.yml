@@ -53,5 +53,6 @@ jobs:
           VERSION: ${{ steps.version.outputs.VERSION }}
           GH_USER: ${{ github.actor }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EARTHLY_SECRETS: "GH_USER,GH_TOKEN"
         run: |
           earthly --push --no-cache +all
