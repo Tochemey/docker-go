@@ -4,10 +4,6 @@ all:
     BUILD \
         --platform=linux/amd64 \
         --platform=linux/arm64 \
-        --platform=linux/arm64/v8 \
-        --platform=linux/arm/v7 \
-        --platform=linux/arm/v6 \
-        --platform=linux/386 \
         +golang-base
 
 golang-base:
