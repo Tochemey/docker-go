@@ -11,7 +11,7 @@ Linux Docker Image for Golang and Golang development Tools. The project adheres 
 - [Mockery](https://github.com/vektra/mockery): To easily generate mocks for unit tests
 - [Golangci-lint](https://github.com/golangci/golangci-lint): To run linter
 
-## Linux Architectures
+## Architectures
 
 - Linux AMD 64bits
 - Linux ARM 64bits
