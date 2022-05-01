@@ -15,3 +15,4 @@ Linux Docker Image for Golang and Golang development Tools. The project adheres 
 
 - Linux AMD 64bits
 - Linux ARM 64bits
+- Linux 386
