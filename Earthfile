@@ -27,7 +27,7 @@ golang-base:
 
     # install vektra/mockery
     # We need to pin this version because of this issue https://github.com/vektra/mockery/issues/442
-    RUN go install github.com/vektra/mockery/v2@v2.13.1
+    RUN go install github.com/vektra/mockery/v2@v2.14.0
 
     # install buf from source
     RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.6.0
