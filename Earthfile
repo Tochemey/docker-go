@@ -8,7 +8,7 @@ all:
         +golang-base
 
 golang-base:
-    FROM golang:1.18.4-alpine
+    FROM golang:1.19.2-alpine
 
     WORKDIR /app
     ARG VERSION=dev
@@ -30,11 +30,11 @@ golang-base:
     RUN go install github.com/vektra/mockery/v2@v2.14.0
 
     # install buf from source
-    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.6.0
+    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.8.0
 
     # install linter
     # binary will be $(go env GOPATH)/bin/golangci-lint
-    RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.47.2
+    RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.48.0
     RUN ls -la $(which golangci-lint)
 
-    SAVE IMAGE --push tochemey/docker-go:1.18.4-${VERSION}
+    SAVE IMAGE --push tochemey/docker-go:1.19.2-${VERSION}
