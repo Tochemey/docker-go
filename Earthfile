@@ -8,7 +8,7 @@ all:
         +golang-base
 
 golang-base:
-    FROM golang:1.20.5-alpine
+    FROM golang:1.20.6-alpine
 
     WORKDIR /app
     ARG VERSION=dev
