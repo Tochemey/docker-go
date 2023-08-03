@@ -14,7 +14,7 @@ golang-base:
     ARG VERSION=dev
 
     # install gcc dependencies into alpine for CGO
-    RUN apk add gcc musl-dev curl git openssh
+    RUN apk --no-cache add git ca-certificates gcc musl-dev libc-dev binutils-gold curl openssh
 
     # install docker tools
     # https://docs.docker.com/engine/install/debian/
@@ -37,4 +37,4 @@ golang-base:
     RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.53.3
     RUN ls -la $(which golangci-lint)
 
-    SAVE IMAGE --push tochemey/docker-go:1.20.6-${VERSION}
+    SAVE IMAGE --push tochemey/docker-go:1.20.7-${VERSION}
