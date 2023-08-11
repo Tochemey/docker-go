@@ -34,7 +34,7 @@ golang-base:
 
     # install linter
     # binary will be $(go env GOPATH)/bin/golangci-lint
-    RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.53.3
+    RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.1
     RUN ls -la $(which golangci-lint)
 
     SAVE IMAGE --push tochemey/docker-go:1.21.0-${VERSION}
