@@ -26,7 +26,7 @@ golang-base:
     RUN export PATH="$PATH:$(go env GOPATH)/bin"
 
     # install vektra/mockery
-    RUN go install github.com/vektra/mockery/v2@v2.32.4
+    RUN go install github.com/vektra/mockery/v2@v2.33.2
 
     # install buf from source
     RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.26.1
@@ -36,4 +36,4 @@ golang-base:
     RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.2
     RUN ls -la $(which golangci-lint)
 
-    SAVE IMAGE --push tochemey/docker-go:1.21.0-${VERSION}
+    SAVE IMAGE --push tochemey/docker-go:1.21.1-${VERSION}
