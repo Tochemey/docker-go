@@ -29,7 +29,7 @@ golang-base:
     RUN go install github.com/vektra/mockery/v2@v2.33.2
 
     # install buf from source
-    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.27.0
+    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.27.1
 
     # install linter
     # binary will be $(go env GOPATH)/bin/golangci-lint
