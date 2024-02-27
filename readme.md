@@ -7,10 +7,11 @@ Linux Docker Image for Golang and Golang development Tools. The project adheres 
 
 ## Features
 
-- [Golang](https://go.dev/dl/): Go binaries
-- [Buf](https://buf.build): Generate protocol buffers wire format
-- [Mockery](https://github.com/vektra/mockery): Generate mocks for unit tests
-- [Golangci-lint](https://github.com/golangci/golangci-lint): Linter
+- [golang](https://go.dev/dl/): Go binaries
+- [buf](https://buf.build): Generate protocol buffers wire format
+- [mockery](https://github.com/vektra/mockery): Generate mocks for unit tests
+- [golangci-lint](https://github.com/golangci/golangci-lint): Linter
+- [connect](https://connectrpc.com/): Connect Generator
 
 ## Architectures
 
