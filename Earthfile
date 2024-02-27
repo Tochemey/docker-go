@@ -26,7 +26,7 @@ golang-base:
     RUN export PATH="$PATH:$(go env GOPATH)/bin"
 
     # install vektra/mockery
-    RUN go install github.com/vektra/mockery/v2@v2.42.2
+    RUN go install github.com/vektra/mockery/v2@v2.42.0
 
     # install buf from source
     RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.29.0
