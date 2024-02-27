@@ -31,6 +31,11 @@ golang-base:
     # install buf from source
     RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.29.0
 
+
+    # install the various tools to generate connect-go
+    RUN go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+    RUN go install connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
+
     # install linter
     # binary will be $(go env GOPATH)/bin/golangci-lint
     RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.56.2
