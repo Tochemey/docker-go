@@ -29,7 +29,7 @@ golang-base:
     RUN go install github.com/vektra/mockery/v2@v2.42.0
 
     # install buf from source
-    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.32.2
+    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.34.0
 
 
     # install the various tools to generate connect-go
