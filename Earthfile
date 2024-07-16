@@ -1,4 +1,4 @@
-VERSION 0.7
+VERSION 0.8
 
 all:
     BUILD \
@@ -31,6 +31,8 @@ golang-base:
     # install buf from source
     RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.34.0
 
+    # install oapi to generate swagger
+    RUN go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
 
     # install the various tools to generate connect-go
     RUN go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
@@ -41,4 +43,4 @@ golang-base:
     RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.59.1
     RUN ls -la $(which golangci-lint)
 
-    SAVE IMAGE --push tochemey/docker-go:1.22.2-${VERSION}
+    SAVE IMAGE --push tochemey/docker-go:1.22.5-${VERSION}
