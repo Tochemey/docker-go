@@ -1,85 +1,91 @@
 {
   extends: [
-    "config:base"
+    'config:recommended',
   ],
   enabledManagers: [
-    "regex", 
-    "github-actions",
+    'custom.regex',
+    'github-actions',
   ],
-  regexManagers: [
+  customManagers: [
     {
-      fileMatch: [ 
-        ".github/renovate.json5$",
+      customType: 'regex',
+      fileMatch: [
+        '.github/renovate.json5$',
       ],
       matchStrings: [
-        "constraints: {(\\s*\\n\\s*)\"go\":\\s*\"(?<currentValue>.*?)\"",
+        'constraints: {(\\s*\\n\\s*)"go":\\s*"(?<currentValue>.*?)"',
       ],
-      depNameTemplate: "go",
-      datasourceTemplate: "golang-version",
-      versioningTemplate: "npm",
+      depNameTemplate: 'go',
+      datasourceTemplate: 'golang-version',
+      versioningTemplate: 'npm',
     },
     {
+      customType: 'regex',
       fileMatch: [
-        "Earthfile$"
+        'Earthfile$',
       ],
       matchStrings: [
-        "FROM golang:(?<currentValue>.*?)\\n"
+        'FROM golang:(?<currentValue>.*?)\\n',
       ],
-      depNameTemplate: "golang",
-      datasourceTemplate: "docker"
+      depNameTemplate: 'golang',
+      datasourceTemplate: 'docker',
     },
     {
+      customType: 'regex',
       fileMatch: [
-        "Earthfile$"
+        'Earthfile$',
       ],
       matchStrings: [
-        "google.golang.org/protobuf/cmd/protoc-gen-go@(?<currentValue>.*?)\\n"
+        'google.golang.org/protobuf/cmd/protoc-gen-go@(?<currentValue>.*?)\\n',
       ],
-      depNameTemplate: "google.golang.org/protobuf",
-      datasourceTemplate: "go"
+      depNameTemplate: 'google.golang.org/protobuf',
+      datasourceTemplate: 'go',
     },
     {
+      customType: 'regex',
       fileMatch: [
-        "Earthfile$"
+        'Earthfile$',
       ],
       matchStrings: [
-        "google.golang.org/grpc/cmd/protoc-gen-go-grpc@(?<currentValue>.*?)\\n"
+        'google.golang.org/grpc/cmd/protoc-gen-go-grpc@(?<currentValue>.*?)\\n',
       ],
-      depNameTemplate: "google.golang.org/grpc/cmd/protoc-gen-go-grpc",
-      datasourceTemplate: "go",
+      depNameTemplate: 'google.golang.org/grpc/cmd/protoc-gen-go-grpc',
+      datasourceTemplate: 'go',
     },
     {
+      customType: 'regex',
       fileMatch: [
-        "Earthfile$"
+        'Earthfile$',
       ],
       matchStrings: [
-        "github.com/bufbuild/buf/cmd/buf@(?<currentValue>.*?)\\n"
+        'github.com/bufbuild/buf/cmd/buf@(?<currentValue>.*?)\\n',
       ],
-      depNameTemplate: "github.com/bufbuild/buf",
-      datasourceTemplate: "go"
+      depNameTemplate: 'github.com/bufbuild/buf',
+      datasourceTemplate: 'go',
     },
     {
+      customType: 'regex',
       fileMatch: [
-        "Earthfile$"
+        'Earthfile$',
       ],
       matchStrings: [
-        "\\$\\(go env GOPATH\\)/bin (?<currentValue>.*?)\\n"
+        '\\$\\(go env GOPATH\\)/bin (?<currentValue>.*?)\\n',
       ],
-      depNameTemplate: "golangci/golangci-lint",
-      datasourceTemplate: "github-releases"
+      depNameTemplate: 'golangci/golangci-lint',
+      datasourceTemplate: 'github-releases',
     },
     {
+      customType: 'regex',
       fileMatch: [
-        ".github/workflows/main.yml$",
-        ".github/workflows/pr.yml$",
-        ".github/workflows/commitlint.yml$"
+        '.github/workflows/main.yml$',
+        '.github/workflows/pr.yml$',
+        '.github/workflows/commitlint.yml$',
       ],
       matchStrings: [
-        "version: (?<currentValue>.*?)\\n"
+        'version: (?<currentValue>.*?)\\n',
       ],
-      depNameTemplate: "earthly/earthly",
-      datasourceTemplate: "github-releases"
-    }
+      depNameTemplate: 'earthly/earthly',
+      datasourceTemplate: 'github-releases',
+    },
   ],
 }
-
