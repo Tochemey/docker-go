@@ -26,10 +26,10 @@ golang-base:
     RUN export PATH="$PATH:$(go env GOPATH)/bin"
 
     # install vektra/mockery
-    RUN go install github.com/vektra/mockery/v2@v2.50.0
+    RUN go install github.com/vektra/mockery/v2@v2.53.2
 
     # install buf from source
-    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.50.0
+    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.50.1
 
     # install oapi to generate swagger
     RUN go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
@@ -40,7 +40,7 @@ golang-base:
 
     # install linter
     # binary will be $(go env GOPATH)/bin/golangci-lint
-    RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.64.5
+    RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.64.6
     RUN ls -la $(which golangci-lint)
 
     SAVE IMAGE --push tochemey/docker-go:1.24.0-${VERSION}
