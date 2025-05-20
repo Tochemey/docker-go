@@ -9,8 +9,8 @@
   customManagers: [
     {
       customType: 'regex',
-      fileMatch: [
-        '.github/renovate.json5$',
+      managerFilePatterns: [
+        '/.github/renovate.json5$/',
       ],
       matchStrings: [
         'constraints: {(\\s*\\n\\s*)"go":\\s*"(?<currentValue>.*?)"',
@@ -21,8 +21,8 @@
     },
     {
       customType: 'regex',
-      fileMatch: [
-        'Earthfile$',
+      managerFilePatterns: [
+        '/Earthfile$/',
       ],
       matchStrings: [
         'FROM golang:(?<currentValue>.*?)\\n',
@@ -32,8 +32,8 @@
     },
     {
       customType: 'regex',
-      fileMatch: [
-        'Earthfile$',
+      managerFilePatterns: [
+        '/Earthfile$/',
       ],
       matchStrings: [
         'google.golang.org/protobuf/cmd/protoc-gen-go@(?<currentValue>.*?)\\n',
@@ -43,8 +43,8 @@
     },
     {
       customType: 'regex',
-      fileMatch: [
-        'Earthfile$',
+      managerFilePatterns: [
+        '/Earthfile$/',
       ],
       matchStrings: [
         'google.golang.org/grpc/cmd/protoc-gen-go-grpc@(?<currentValue>.*?)\\n',
@@ -54,8 +54,8 @@
     },
     {
       customType: 'regex',
-      fileMatch: [
-        'Earthfile$',
+      managerFilePatterns: [
+        '/Earthfile$/',
       ],
       matchStrings: [
         'github.com/bufbuild/buf/cmd/buf@(?<currentValue>.*?)\\n',
@@ -65,8 +65,8 @@
     },
     {
       customType: 'regex',
-      fileMatch: [
-        'Earthfile$',
+      managerFilePatterns: [
+        '/Earthfile$/',
       ],
       matchStrings: [
         '\\$\\(go env GOPATH\\)/bin (?<currentValue>.*?)\\n',
@@ -76,10 +76,10 @@
     },
     {
       customType: 'regex',
-      fileMatch: [
-        '.github/workflows/main.yml$',
-        '.github/workflows/pr.yml$',
-        '.github/workflows/commitlint.yml$',
+      managerFilePatterns: [
+        '/.github/workflows/main.yml$/',
+        '/.github/workflows/pr.yml$/',
+        '/.github/workflows/commitlint.yml$/',
       ],
       matchStrings: [
         'version: (?<currentValue>.*?)\\n',
