@@ -8,7 +8,7 @@ all:
         +golang-base
 
 golang-base:
-    FROM golang:1.24.4-alpine
+    FROM golang:1.24.5-alpine
 
     WORKDIR /app
     ARG VERSION=dev
@@ -43,4 +43,4 @@ golang-base:
     RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.3.1
     RUN ls -la $(which golangci-lint)
 
-    SAVE IMAGE --push tochemey/docker-go:1.24.0-${VERSION}
+    SAVE IMAGE --push tochemey/docker-go:1.24.5-${VERSION}
