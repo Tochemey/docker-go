@@ -29,7 +29,7 @@ golang-base:
     RUN go install github.com/vektra/mockery/v2@v2.53.2
 
     # install buf from source
-    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.56.0
+    RUN GO111MODULE=on GOBIN=/usr/local/bin go install github.com/bufbuild/buf/cmd/buf@v1.57.0
 
     # install oapi to generate swagger
     RUN go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
